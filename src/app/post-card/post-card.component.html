@@ -1,0 +1,14 @@
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>{{currentPost?.userId}}</mat-card-title>
+    <mat-card-subtitle>{{currentPost?.createdDate}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src={{currentPost?.headerImage}}>
+  <mat-card-content>
+    {{currentPost?.content}}
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="EditPost()" *ngIf="currentPost && currentPost.userId==userId">Edit</button>
+    <button mat-button (click)="DeletePost()" *ngIf="currentPost && currentPost.userId==userId">Delete</button>
+  </mat-card-actions>
+</mat-card>

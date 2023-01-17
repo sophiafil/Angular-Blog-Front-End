@@ -1,0 +1,17 @@
+<form class="login">
+    <h2>Login to Continue</h2>
+    <mat-error *ngIf="errorOccured">The user ID or password was entered incorrectly</mat-error>
+    <mat-form-field>
+        <mat-label>User ID</mat-label>
+        <input [(ngModel)]="userId" matInput type="text" name="userId" [formControl]="fUserId">
+        <mat-error *ngIf="fUserId.invalid">Please enter in a value</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input [(ngModel)]="password" matInput [type]="showPassword ? 'text' : 'password'" name="password" [formControl]="fPassword">
+        <mat-icon matSuffix (click)="viewPassword()">visibility</mat-icon>
+        <mat-error *ngIf="fPassword.invalid">Please enter in a value</mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary" (click)="Login()">Login</button>
+    <mat-error *ngIf="errorOccured">Bad user name and password!</mat-error>
+</form>

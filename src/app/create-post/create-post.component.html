@@ -1,0 +1,18 @@
+<form class="create">
+    <mat-form-field>
+        <mat-label>Post Title</mat-label>
+        <input matInput type="text" name="postTitle" required [formControl]="fPostTitle" [(ngModel)]="newPost.title">
+        <mat-error *ngIf="fPostTitle.invalid">Please enter in a value</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Header Image URL</mat-label>
+        <input matInput="url" name="headerImage" required [formControl]="fHeaderImage" [(ngModel)]="newPost.headerImage">
+        <mat-error *ngIf="fHeaderImage.invalid">Please enter in a value</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Content</mat-label>
+        <textarea matInput name="content" required [formControl]="fContent" [(ngModel)]="newPost.content"></textarea>
+        <mat-error *ngIf="fContent.invalid">Please enter in a value</mat-error>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary" (click)="AddPost()">Create Post</button>&nbsp;
+</form>

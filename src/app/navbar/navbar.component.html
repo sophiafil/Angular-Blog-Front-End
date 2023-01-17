@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+    <span><a class="nav-link" [routerLink]="['/ViewPost']">Our Fancy Blog</a></span>
+    <span class="example-spacer"></span>
+    <span><a class="nav-link" [routerLink]="['/CreatePost']" *ngIf="currentUser">Create Post</a></span>&nbsp;&nbsp;
+    <span><a class="nav-link" [routerLink]="['/EditPost']" *ngIf="currentUser">Edit Post</a></span>&nbsp;&nbsp;
+    <span><a class="nav-link" [routerLink]="['/Register']">Create an Account</a></span>&nbsp;&nbsp;
+    <span><a class="nav-link" [routerLink]="['/Login']" *ngIf="!currentUser">Login</a></span>
+    <span><a class="nav-link" (click)="LogoutUser()" *ngIf="currentUser">Logout</a></span>
+</mat-toolbar>
